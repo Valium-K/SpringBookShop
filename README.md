@@ -9,6 +9,12 @@ Spring Book Shop
 * 도메인 개발
 * 웹 계층 개발
 
+## 사용한 ORM, DB, 등
+* H2
+* Spring Data JPA
+* lombok
+* thymeleaf
+
 [참고](https://www.inflearn.com/course/스프링부트-JPA-활용-1/)
 
 ---------------------
