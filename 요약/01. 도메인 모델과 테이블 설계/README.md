@@ -34,3 +34,18 @@
     
 ### 양방향 연관관계
 * 연관관계 편의 메서드를 만드는 것이 좋다.
+
+### Repository
+* Domain과 DB를 연결해주는 Repository는 entityManager를 필히 가진다.   
+    즉, xxxRepository를 가져다 사용하는 것은 JPA를 통해 관리하겠다 라고 생각하면 된다.
+  
+### Persist 전파 범위
+* 라이프 사이클에서 동일하게 관리를 할 때
+
+![img.png](img.png)
+  
+위의 예로 Order는 OrderItem과 Delivery의 주인(외래키를 가지는 쪽)이고,    
+OrderItem과 Delivery는 private로 Order만 참조를 하고 다른 엔티티는 참조를 하지 않는다.    
+이렇게 라이프 사이클에서 동일하게 관리가 될 때 `cascade = CascadeType.ALL`를 적용 가능하다.    
+
+위의 경우가 아니라면 별도의 Repository를 생성 후 save()하는게 낫다.
