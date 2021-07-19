@@ -1,6 +1,15 @@
+### POST TEST
 POST http://localhost:8080/api/v2/members
 Content-Type: application/json
 
 {
   "name":"test"
+}
+
+### PUT TEST
+PUT http://localhost:8080/api/v2/members/1
+Content-Type: application/json
+
+{
+"name":"new-name"
 }
