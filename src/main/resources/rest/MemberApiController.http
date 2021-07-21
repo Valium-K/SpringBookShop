@@ -25,3 +25,11 @@ Content-Type: application/json
 ### v3 주문 조회
 GET http://localhost:8080/api/v3/simple-orders
 Content-Type: application/json
+
+### v1 주문 조회 - entity + 컬렉션 노출
+GET http://localhost:8080/api/v1/orders
+Content-Type: application/json
+
+### v2 주문 조회 - dto
+GET http://localhost:8080/api/v2/orders
+Content-Type: application/json

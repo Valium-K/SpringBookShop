@@ -70,4 +70,17 @@ public class OrderRepository {
 
         return em.createQuery(qlString, Order.class).getResultList();
     }
+
+    public List<Order> findAllWithItem() {
+
+        // order에 대한 조인의 결과가 뻥튀기 되기에 distinct를 해준다.
+        // jpql에서 distinct는 쿼리문에도 들어간다. 하지만 이 경우는 DB에서 제거되는 행이 없기에
+        // 뻥튀기 된 결과에 jpql이 추가적으로 distinct를 한다.
+        // 쿼리는 1줄 나간다.
+        return em.createQuery("select distinct o from Order as o" +
+                                    " join fetch o.member as m" +
+                                    " join fetch o.delivery as d" +
+                                    " join fetch o.orderItems as oi" +
+                                    " join fetch oi.item as i", Order.class).getResultList();
+    }
 }
