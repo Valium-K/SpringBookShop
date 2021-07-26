@@ -3,11 +3,13 @@ package jpabook.jpashop.repository.order.query;
 import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.OrderStatus;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(of = "orderId")
 public class OrderQueryDto {
 
     private Long orderId;
@@ -27,5 +29,15 @@ public class OrderQueryDto {
 
         // list인 orderItems는 쿼리문 상 넣을 수 없기에 일단 뺀다.
         // this.orderItems = orderItems;
+    }
+
+    // for v6
+    public OrderQueryDto(Long orderId, String name, LocalDateTime orderDate, OrderStatus orderStatus, Address address, List<OrderItemQueryDto> orderItems) {
+        this.orderId = orderId;
+        this.name = name;
+        this.orderDate = orderDate;
+        this.orderStatus = orderStatus;
+        this.address = address;
+        this.orderItems = orderItems;
     }
 }
