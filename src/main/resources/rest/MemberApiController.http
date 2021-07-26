@@ -33,3 +33,11 @@ Content-Type: application/json
 ### v2 주문 조회 - dto
 GET http://localhost:8080/api/v2/orders
 Content-Type: application/json
+
+### v4 주문 조회 - 1:N(컬렉션) - N + 1 문제 o
+GET http://localhost:8080/api/v4/orders
+Content-Type: application/json
+
+### v5 주문 조회 - 1:N(컬렉션) - N + 1 문제 x
+GET http://localhost:8080/api/v5/orders
+Content-Type: application/json
