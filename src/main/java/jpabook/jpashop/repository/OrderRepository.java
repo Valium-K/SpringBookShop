@@ -10,6 +10,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+
+// Order entity를 조회하기위한 repo
+// 메인 비지니스를 위한 repo
 @Repository
 @RequiredArgsConstructor
 public class OrderRepository {
